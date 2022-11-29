@@ -2,6 +2,7 @@ use std::time::Instant;
 
 mod d01;
 mod d02;
+mod d03;
 
 fn main() {
     println!("Day\t\truntime\tresult");
@@ -21,6 +22,14 @@ fn main() {
 
     let start = Instant::now();
     let result = d02::get_solution_2();
+    println!("Day  2.2\t{}us\t{}", start.elapsed().as_micros(), result);
+
+    let start = Instant::now();
+    let result = d03::get_solution_1();
+    println!("Day  3.1\t{}us\t{}", start.elapsed().as_micros(), result);
+
+    let start = Instant::now();
+    let result = d03::get_solution_2();
     println!("Day  2.2\t{}us\t{}", start.elapsed().as_micros(), result);
 
     println!("\nTotal runtime: {}ms", start_all.elapsed().as_millis());
