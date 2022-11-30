@@ -3,7 +3,7 @@ static _INPUT: &str = "ugkcyxxp";
 fn _compute_password_1() -> String {
     let mut password = String::new();
     for i in 0.. {
-        let digest = format!("{:?}", md5::compute(format!("{INPUT}{i}")));
+        let digest = format!("{:?}", md5::compute(format!("{_INPUT}{i}")));
         if digest.starts_with("00000") {
             password.push_str(&digest[5..6]);
             if password.len() == 8 {
@@ -20,7 +20,7 @@ fn _compute_password_2() -> String {
     let mut password_raw = [S; 8];
     let mut found_indices = Vec::new();
     for i in 0.. {
-        let digest = format!("{:?}", md5::compute(format!("{INPUT}{i}")));
+        let digest = format!("{:?}", md5::compute(format!("{_INPUT}{i}")));
         if digest.starts_with("00000") {
             // safety: this is single threaded
             if let Ok(idx) = digest[5..6].parse::<usize>() {
