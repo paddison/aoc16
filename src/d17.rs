@@ -28,7 +28,7 @@ impl State {
     fn is_goal(&self) -> bool {
         self.pos == (3, 3)
     }
-
+    
     fn next(&self, pc: &str) -> Vec<Self> {
         let dirs = ['U', 'D', 'L', 'R'];
         let mut next = Vec::new(); 
@@ -88,4 +88,10 @@ fn bfs_longest(start: State, pc: &str) -> usize {
     }
 
     longest
+}
+
+#[test]
+fn d17() {
+    let s = "World";
+    println!("Hello, {s}");
 }
